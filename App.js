@@ -7,6 +7,9 @@ export default function App() {
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask = () => {
+    if (!task || task.trim() === "") {
+      return;
+    }
     Keyboard.dismiss();
     setTaskItems([...taskItems, task]);
     setTask(null);
